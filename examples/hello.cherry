@@ -2,5 +2,5 @@ import  system;
 package example;
 
 static void main(string... args) {
-  Console.write("Hello, World!");
+  console.write("Hello, World!");
 }
