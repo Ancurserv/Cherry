@@ -9,5 +9,5 @@ object Split {
 
 # Define implemenation:
 void Split::print(string message) {
-  Console.write(message);
+  console.write(message);
 }
