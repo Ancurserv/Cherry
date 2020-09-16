@@ -8,6 +8,7 @@ console.write("cast");
 void int_float() {
 int a = 1;
 float b<a> = a;
+console.write(b); #outputs 1.0
 }
 
 int_float();
