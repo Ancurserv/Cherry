@@ -6,7 +6,7 @@ delegate void SomeFunc();
 
 # Some standalone function
 void func() {
-  Console.write("Called from delegate");
+  console.write("Called from delegate");
 }
 
 # Entry point
