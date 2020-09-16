@@ -1,0 +1,16 @@
+import system;
+package example;
+# package isn't needed for standard lib, just for external/third party libs. "package color;"
+
+static void main(string[] args){
+console.write("cast");
+
+void int_float() {
+int a = 1;
+float b<a> = a;
+}
+
+int_float();
+}
+# we will be using vector symbols to initiate casting "<>".
+
