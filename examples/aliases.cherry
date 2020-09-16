@@ -5,7 +5,7 @@ package example;
 object SomeType {
   # Print something
   void print() {
-    Console.write("Called from alias");
+    console.write("Called from alias");
   }
 }
 
