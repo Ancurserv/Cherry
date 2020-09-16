@@ -43,9 +43,6 @@ void Shape::transform(Position2D position) {
   y = position.y;
 }
 
-# Outer-object definition
-void Shape
-
 # Child Rectangle object
 object Rectangle : Shape {
   # ...
