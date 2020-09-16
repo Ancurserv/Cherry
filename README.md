@@ -26,3 +26,12 @@ __To build Cherry:__
   * 'q' Is used to ignore commonly annoying compiler warnings, usually ones that show up a lot.
 
 For example a debug build with testing, profiling, and quiet compiling would have the flag sequence: `-dtpq` or potentially `-pqdt`. The order of the flags do not matter, just that they are followed initially by the `-` and that they are valid flags. The build script will not do anything with flags it doesn't know, it will simply continue to process all flags.
+
+There is a second option that needs to be passed to `build.sh` as well, this is one of:
+
+* `unix`
+* `vs2015`
+* `vs2017`
+* `vs2019`
+
+This is so cmake knows which compiler to generate project files for. For a unix build, which is the default, it uses `Unix Makefiles` as the generator. For Visual Studio builds, depending on the version, it will generate `.sln` and `.vcxproj` or whatever else it needs to create.
