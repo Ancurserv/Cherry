@@ -1,0 +1,13 @@
+# Declare interface and documentation:
+import  system;
+package example;
+
+object Split {
+  # Inner-object declaration
+  void print(string message);
+}
+
+# Define implemenation:
+void Split::print(string message) {
+  Console.write(message);
+}

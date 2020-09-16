@@ -1,0 +1,82 @@
+package example;
+
+# A position of a shape
+object Position2D {
+  float x;
+  float y;
+}
+
+# A rotation of a shape
+object Rotation2D {
+  float pitch;
+  float yaw;
+}
+
+# Interface for shapes.
+interface IShape {
+  void transform(Position2D position);
+  void transform(Rotation2D rotation);
+}
+
+# Base shape object
+abstract object Shape : IShape {
+  # Mix-ins
+  mixin Position2D;
+  mixin Rotation2D;
+
+  # Inner-object definition
+  void transform(Position2D position) override {
+    x = position.x;
+    y = position.y;
+  }
+
+  # Inner-object definition
+  void transform(Rotation2D rotation) override {
+    pitch = rotation.pitch;
+    yaw   = rotation.yaw;
+  }
+}
+
+# Outer-object definition
+void Shape::transform(Position2D position) {
+  x = position.x;
+  y = position.y;
+}
+
+# Outer-object definition
+void Shape
+
+# Child Rectangle object
+object Rectangle : Shape {
+  # ...
+}
+
+static void main(string... args) {
+  # Create a rectangle on the stack
+  var rect = Rectangle {
+    .x     = 0.0f,
+    .y     = 0.0f,
+    .pitch = 0.0f,
+    .yaw   = 0.0f,
+  };
+
+  # Check post conditions
+  ensures rect.x     == 0.0f;
+  ensures rect.y     == 0.0f;
+  ensures rect.pitch == 0.0f;
+  ensures rect.yaw   == 0.0f;
+
+  # Transform rect
+  rect.transform(Position2D{ .x = 1.0f, .y = -50.0f });
+
+  # Check post conditions
+  ensures rect.x ==   1.0f;
+  ensures rect.y == -50.0f;
+
+  # Transform rect
+  rect.transform(Rotation2D{ .pitch = 21.5f, .yaw = -76.3f });
+
+  # Check post conditions
+  ensures rect.pitch ==  21.5f;
+  ensures rect.yaw   == -76.3f;
+}
