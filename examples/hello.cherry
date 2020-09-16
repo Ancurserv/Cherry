@@ -2,5 +2,5 @@ import  system;
 package example;
 
 static void main(string... args) {
-  Console.Write("Hello, World!");
+  Console.write("Hello, World!");
 }

@@ -1,0 +1,19 @@
+import  system;
+package example;
+
+# Declare a delegate type
+delegate void SomeFunc();
+
+# Some standalone function
+void func() {
+  Console.write("Called from delegate");
+}
+
+# Entry point
+static void main(string... args) {
+  # Create delegate variable
+  SomeFunc callback = func;
+
+  # Call delegate
+  callback();
+}

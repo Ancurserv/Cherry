@@ -1,0 +1,22 @@
+import  system;
+package example;
+
+# Declare some type
+object SomeType {
+  # Print something
+  void print() {
+    Console.write("Called from alias");
+  }
+}
+
+# Create type alias
+alias AliasType = SomeType;
+
+# Entry point
+static void main(string... args) {
+  # Create object
+  var obj = AliasType();
+
+  # Call print on obj
+  obj.print();
+}
